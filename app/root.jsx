@@ -9,7 +9,7 @@ import {
 } from "@remix-run/react";
 import appStylesHref from "./app.css";
 
-
+import Nav from "./components/nav";
 import stylesheet from "~/tailwind.css";
 
 
@@ -26,6 +26,7 @@ export default function App() {
         <Links />
       </head>
       <body>
+        <Nav />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
