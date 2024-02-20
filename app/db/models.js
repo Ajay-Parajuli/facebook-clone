@@ -10,9 +10,11 @@ const userSchema = new mongoose.Schema(
       required: true, // Ensure user emails are required
       unique: true // Ensure user emails are unique
     },
-    name: String,
+    firstname: String,
+    lastname: String,
     title: String,
-    educations: [String],
+    birthdate: Date,
+    gender: String,
     password: {
       type: String,
       required: true, // Ensure user passwords are required
@@ -21,7 +23,6 @@ const userSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-
 const postSchema = new mongoose.Schema(
   {
     caption: String,
