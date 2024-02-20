@@ -10,7 +10,6 @@ import { useLoaderData } from "@remix-run/react";
 export default function Nav() {
     const { user } = useLoaderData();  
     const [image, setImage] = useState(user.image);
-    console.log("user", user); 
     const [searchToggle, setSearchToggle] = useState(false); 
     const [createToggle, setCreateToggle] = useState(false);
 
