@@ -12,6 +12,13 @@ import { RemixServer } from "@remix-run/react";
 import { isbot } from "isbot";
 import { renderToPipeableStream } from "react-dom/server";
 
+
+import connectDb from "./db/db-connect.server";
+
+
+connectDb();
+
+
 const ABORT_DELAY = 5_000;
 
 export default function handleRequest(
