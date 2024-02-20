@@ -7,6 +7,10 @@ import { sessionStorage } from "../services/session.server";
 
 
 export async function loader({ request }) {
+
+  await authenticator.isAuthenticated(request, {
+    successRedirect: "/homepage"
+  });
   const session = await sessionStorage.getSession(request.headers.get("Cookie"));
   // Get the error message from the sessio
   const error = session.get("sessionErrorKey");
@@ -42,14 +46,14 @@ export default function SignUp() {
             <input className="p-2 border-2 rounded w-[45%]"
                 type="text"
                 id="name"
-                name="firstName"
+                name="firstname"
                 placeholder="First name"
                 required
             />
                <input className="p-2 border-2 border-gray-300 rounded w-[45%]"
                 type="text"
                 id="name"
-                name="lastName"
+                name="lastname"
                 placeholder="Last name"
                 required
             />
@@ -70,20 +74,20 @@ export default function SignUp() {
             </div>
             <div className="pl-4 pr-4 mt-5">
                 <label htmlFor="birthday" className="text-black">Birthday</label>
-               <input type="date" id="birthday" name="birthday" className="p-2 border-2 border-gray-300 rounded w-full mt-1" required />
+               <input type="date" id="birthday" name="birthdate" className="p-2 border-2 border-gray-300 rounded w-full mt-1" required />
             </div>
             <div className="pl-4 pr-4 mt-5">
                 <label htmlFor="gender">Gender</label>
                 <div className="flex justify-around mt-2">
                     <div className="border-2 w-[30%] flex justify-around h-8 items-center rounded">
                     <label htmlFor="man">Man</label>
-                    <input className="w-4" type="radio" name="gender"></input>
+                    <input value="Man" className="w-4" type="radio" name="gender"></input>
                     </div>
                     <div className="border-2 w-[30%] flex justify-around h-8 items-center rounded">                    <label htmlFor="woman">Woman</label>
-                    <input className="w-4" type="radio" name="gender"></input>
+                    <input value="woman" className="w-4" type="radio" name="gender"></input>
                     </div>
                     <div className="border-2 w-[30%] flex justify-around h-8 items-center rounded">                    <label htmlFor="other">Other</label>
-                    <input className="w-4" type="radio" name="gender"></input>
+                    <input value="other" className="w-4" type="radio" name="gender"></input>
                     </div>
                 </div>
             </div>

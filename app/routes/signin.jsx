@@ -6,7 +6,9 @@ import { sessionStorage } from "../services/session.server";
 
 export async function loader({ request }) {
   // If the user is already authenticated redirect to /posts directly
-
+  await authenticator.isAuthenticated(request, {
+    successRedirect: "/homepage"
+  });
   // Retrieve error message from session if present
   const session = await sessionStorage.getSession(request.headers.get("Cookie"));
   // Get the error message from the session
