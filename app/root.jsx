@@ -11,12 +11,22 @@ import appStylesHref from "./app.css";
 
 import Nav from "./components/nav";
 import stylesheet from "~/tailwind.css";
+import { authenticator } from "./services/auth.server";
+import { useLoaderData } from "@remix-run/react";
 
 
 export const links = () => [{ rel: "stylesheet", href: appStylesHref } , { rel: "stylesheet", href: stylesheet }] ;
 
 
+export const loader = async ({ request }) => {
+  const user = await authenticator.isAuthenticated(request);
+  return { user };
+}
+
+
+
 export default function App() {
+  const { user } = useLoaderData();
   return (
     <html lang="en">
       <head>
@@ -26,7 +36,7 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Nav />
+      {user && <Nav />}
         <Outlet />
         <ScrollRestoration />
         <Scripts />
