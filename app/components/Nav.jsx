@@ -61,10 +61,10 @@ export default function Nav() {
                 <NavLink className="mr-2 md:mr-5 lg:mr-7" to="/homepage">
                     <img className="w-7 md:w-8 lg:w-9 " src={noti} alt="facebook logo" />
                 </NavLink>
-                <div>
+                <div className="">
                     <img
           id="image-preview"
-          className="w-7 md:w-8 lg:w-9 "
+          className="w-7 h-7 object-cover rounded-full md:h-8 lg:h-9 md:w-8 lg:w-9"
           src={image ? image : "https://placehold.co/600x400?text=Paste+an+image+URL"}
           alt="Choose"
           onError={e => (e.target.src = "https://placehold.co/600x400?text=Error+loading+image")}

@@ -85,12 +85,12 @@ export default function UpdateProfile() {
               <label htmlFor="gender">Gender</label>
               <div className="flex justify-around mt-2">
                 <div className="border-2 w-[30%] flex justify-around h-8 items-center rounded">
-                  <label htmlFor="man">Man</label>
-                  <input value="Man" className="w-4" type="radio" name="gender" defaultChecked={user.gender === "Man"}></input>
+                  <label htmlFor="man">Male</label>
+                  <input value="Male" className="w-4" type="radio" name="gender" defaultChecked={user.gender === "Male"}></input>
                 </div>
                 <div className="border-2 w-[30%] flex justify-around h-8 items-center rounded">
-                  <label htmlFor="woman">Woman</label>
-                  <input value="Woman" className="w-4" type="radio" name="gender" defaultChecked={user.gender === "Woman"}></input>
+                  <label htmlFor="woman">Female</label>
+                  <input value="Female" className="w-4" type="radio" name="gender" defaultChecked={user.gender === "Female"}></input>
                 </div>
                 <div className="border-2 w-[30%] flex justify-around h-8 items-center rounded">
                   <label htmlFor="other">Other</label>
