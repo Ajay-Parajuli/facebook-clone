@@ -9,7 +9,7 @@ import {
 } from "@remix-run/react";
 import appStylesHref from "./app.css";
 
-import Nav from "./components/nav";
+import Nav from "./components/Nav";
 import stylesheet from "~/tailwind.css";
 import { authenticator } from "./services/auth.server";
 import { useLoaderData } from "@remix-run/react";
